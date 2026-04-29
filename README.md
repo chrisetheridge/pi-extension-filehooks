@@ -1,19 +1,17 @@
 # pi-file-hooks
 
-Standalone Pi extension package for configurable file hooks.
+Generic post-tool hook runner for file mutations.
 
 ## What it does
 
-- Runs after file-mutating tool results that include an `input.path`.
-- Matches paths against glob patterns from config.
-- Executes configured commands and shows hook activity in the Pi UI.
+- Watches `tool_result` events for any tool result that includes `input.path`.
+- Matches the path against glob patterns.
+- Runs the configured command after the tool completes.
+- Uses the Pi UI for status and notifications so hook activity is visible in the session.
 
 ## Config
 
-Project-local config lives at `.pi/extensions/file-hooks.json`.
-Global config lives at `~/.pi/agent/extensions/file-hooks.json`.
-
-Example:
+Create `.pi/extensions/file-hooks.json` in the project root, or `~/.pi/agent/extensions/file-hooks.json` globally.
 
 ```json
 {
@@ -28,18 +26,17 @@ Example:
 }
 ```
 
-See `src/file-hooks/README.md` for the full config schema and template variables.
+## Template variables
 
-## Install
+- `{path}`: project-relative path
+- `{relativePath}`: same as `{path}`
+- `{absolutePath}`: absolute filesystem path
+- `{cwd}`: current project root
+- `{dir}`: parent directory of the target
+- `{absoluteDir}`: absolute parent directory of the target
 
-```bash
-pi install ./ -l
-```
+## Notes
 
-## Develop
-
-```bash
-npm install
-npm run check
-npm run test
-```
+- `tools` is optional. When omitted, the hook applies to `write` and `edit`.
+- `cwd` is optional. When omitted, the command runs in the current project root.
+- Named hooks replace earlier hooks with the same `name` when both global and project config are loaded.
