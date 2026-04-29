@@ -1,0 +1,39 @@
+{
+  "name": "pi-file-hooks",
+  "version": "0.1.0",
+  "description": "Standalone Pi extension package for configurable file hooks.",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "check": "tsc --noEmit",
+    "test": "vitest run",
+    "pack:dry-run": "npm pack --dry-run"
+  },
+  "files": [
+    "extensions",
+    "README.md"
+  ],
+  "pi": {
+    "extensions": [
+      "./extensions"
+    ]
+  },
+  "peerDependencies": {
+    "@mariozechner/pi-coding-agent": "*",
+    "typebox": "*"
+  },
+  "peerDependenciesMeta": {
+    "@mariozechner/pi-coding-agent": {
+      "optional": true
+    },
+    "typebox": {
+      "optional": true
+    }
+  },
+  "devDependencies": {
+    "@mariozechner/pi-coding-agent": "latest",
+    "typescript": "^5.9.3",
+    "typebox": "latest",
+    "vitest": "^4.1.5"
+  }
+}
