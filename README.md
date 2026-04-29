@@ -8,16 +8,25 @@ Standalone Pi extension package for configurable file hooks.
 - Matches paths against glob patterns from config.
 - Executes configured commands and shows hook activity in the Pi UI.
 
-## Layout
-
-- Runtime extension: `src/file-hooks/index.ts`
-- Extension docs: `src/file-hooks/README.md`
-- Test file: `file-hooks.test.ts`
-
 ## Config
 
 Project-local config lives at `.pi/extensions/file-hooks.json`.
 Global config lives at `~/.pi/agent/extensions/file-hooks.json`.
+
+Example:
+
+```json
+{
+  "hooks": [
+    {
+      "name": "cljfmt",
+      "match": ["**/*.clj", "**/*.cljc", "**/*.cljs"],
+      "command": "bb",
+      "args": ["cljfmt-fix", "{path}"]
+    }
+  ]
+}
+```
 
 See `src/file-hooks/README.md` for the full config schema and template variables.
 
