@@ -10,8 +10,8 @@ Standalone Pi extension package for configurable file hooks.
 
 ## Layout
 
-- Runtime extension: `extensions/file-hooks/index.ts`
-- Extension docs: `extensions/file-hooks/README.md`
+- Runtime extension: `src/file-hooks/index.ts`
+- Extension docs: `src/file-hooks/README.md`
 - Test file: `file-hooks.test.ts`
 
 ## Config
@@ -19,7 +19,7 @@ Standalone Pi extension package for configurable file hooks.
 Project-local config lives at `.pi/extensions/file-hooks.json`.
 Global config lives at `~/.pi/agent/extensions/file-hooks.json`.
 
-See `extensions/file-hooks/README.md` for the full config schema and template variables.
+See `src/file-hooks/README.md` for the full config schema and template variables.
 
 ## Install
 

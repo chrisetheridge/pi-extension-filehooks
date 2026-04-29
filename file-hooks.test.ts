@@ -49,7 +49,7 @@ async function loadExtension(homeDir: string): Promise<LoadedExtension> {
 		}),
 	};
 
-	const { default: fileHooksExtension } = await import("./extensions/file-hooks/index.ts");
+	const { default: fileHooksExtension } = await import("./src/file-hooks/index.ts");
 	fileHooksExtension(pi as never);
 
 	return { handlers, pi };

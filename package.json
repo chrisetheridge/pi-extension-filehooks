@@ -10,12 +10,12 @@
     "pack:dry-run": "npm pack --dry-run"
   },
   "files": [
-    "extensions",
+    "src",
     "README.md"
   ],
   "pi": {
     "extensions": [
-      "./extensions"
+      "./src"
     ]
   },
   "peerDependencies": {
