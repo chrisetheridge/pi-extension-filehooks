@@ -9,6 +9,22 @@ Generic post-tool hook runner for file mutations.
 - Runs the configured command after the tool completes.
 - Uses the Pi UI for status and notifications so hook activity is visible in the session.
 
+## Install
+
+From git:
+
+```bash
+pi install git:github.com/chrisetheridge/pi-extension-filehooks
+```
+
+From this local checkout:
+
+```bash
+pi install ./ -l
+```
+
+Pi clones git packages, runs `npm install` when `package.json` is present, then loads the resources declared in the `pi` manifest.
+
 ## Config
 
 Create `.pi/extensions/file-hooks.json` in the project root, or `~/.pi/agent/extensions/file-hooks.json` globally.

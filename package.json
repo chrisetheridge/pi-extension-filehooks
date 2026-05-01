@@ -4,6 +4,11 @@
   "description": "Standalone Pi extension package for configurable file hooks.",
   "type": "module",
   "private": true,
+  "keywords": [
+    "pi-package",
+    "pi-extension",
+    "file-hooks"
+  ],
   "scripts": {
     "check": "tsc --noEmit",
     "test": "vitest run",
