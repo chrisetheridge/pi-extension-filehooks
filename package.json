@@ -12,7 +12,11 @@
   "scripts": {
     "check": "tsc --noEmit",
     "test": "vitest run",
-    "pack:dry-run": "npm pack --dry-run"
+    "pack:dry-run": "npm pack --dry-run",
+    "prepare": "husky",
+    "format": "biome format --write .",
+    "format:check": "biome format .",
+    "lint": "biome check ."
   },
   "files": [
     "src",
@@ -38,6 +42,8 @@
   "devDependencies": {
     "@biomejs/biome": "2.4.14",
     "@mariozechner/pi-coding-agent": "latest",
+    "husky": "^9.1.7",
+    "lint-staged": "^17.0.4",
     "typebox": "latest",
     "typescript": "^5.9.3",
     "vitest": "^4.1.5"
