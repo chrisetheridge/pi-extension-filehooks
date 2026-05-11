@@ -56,3 +56,28 @@ Create `.pi/extensions/file-hooks.json` in the project root, or `~/.pi/agent/ext
 - `tools` is optional. When omitted, the hook applies to `write` and `edit`.
 - `cwd` is optional. When omitted, the command runs in the current project root.
 - Named hooks replace earlier hooks with the same `name` when both global and project config are loaded.
+
+## Development
+
+Install dependencies:
+
+```bash
+npm install
+```
+
+Verify changes:
+
+```bash
+npm run check
+npm test
+npm run pack:dry-run
+```
+
+Project layout:
+
+- Runtime extension code lives under `src/`.
+- Pi auto-discovers `*.ts` files under `src/`, so keep tests, fixtures, scratch files, and contributor-only docs outside `src/`.
+- Tests live under `test/`; the current suite is `test/file-hooks.test.ts`.
+- User-facing extension documentation lives in this README.
+
+GitHub Issues is the authoritative issue tracker for this repository.
